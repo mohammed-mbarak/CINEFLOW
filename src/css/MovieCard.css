@@ -1,18 +1,21 @@
+/* ---------------- MOVIE CARD ----------------- */
 .movie-card {
     position: relative;
     border-radius: 8px;
     overflow: hidden;
     background-color: #1a1a1a;
-    transition: transform 0.2s;
-    height: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .movie-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
+/* ---------------- MOVIE POSTER ---------------- */
 .movie-poster {
     position: relative;
     aspect-ratio: 2/3;
@@ -25,34 +28,35 @@
     object-fit: cover;
 }
 
+/* ---------------- OVERLAY ---------------- */
 .movie-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom,
-            rgba(0, 0, 0, 0.1),
-            rgba(0, 0, 0, 0.8));
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.85));
     opacity: 0;
-    transition: opacity 0.2s;
+    transition: opacity 0.25s ease;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: center;
     padding: 1rem;
+    gap: 0.5rem;
 }
 
 .movie-card:hover .movie-overlay {
     opacity: 1;
 }
 
+/* ---------------- FAVORITE BUTTON ---------------- */
 .favorite-btn {
     position: absolute;
     top: 1rem;
     right: 1rem;
     color: white;
     font-size: 1.5rem;
-    padding: 0.5rem;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     width: 40px;
@@ -60,27 +64,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.2s;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    border: none;
 }
 
 .favorite-btn:hover {
     background-color: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
 }
 
 .favorite-btn.active {
     color: #ff4757;
 }
 
-.rating-select {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
+/* ---------------- TRAILER BUTTON ---------------- */
+.trailer-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: #e50914;
+    color: #fff;
     border: none;
-    padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 0.5rem;
+    transition: background 0.2s, transform 0.2s;
 }
 
+.trailer-btn:hover {
+    background: #ff0a16;
+    transform: translateY(-2px);
+}
+
+/* ---------------- MOVIE INFO ---------------- */
 .movie-info {
     padding: 1rem;
     flex: 1;
@@ -92,19 +108,51 @@
 .movie-info h3 {
     font-size: 1rem;
     margin: 0;
+    color: #fff;
 }
 
 .movie-info p {
     color: #999;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    margin: 0;
 }
 
+/* ---------------- USER RATING ---------------- */
 .user-rating {
     color: #ffd700;
     font-size: 0.9rem;
     margin-top: auto;
 }
 
+/* ---------------- MODAL ---------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: #000;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    overflow: hidden;
+}
+
+.modal-content iframe {
+    width: 100%;
+    height: 450px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
 @media (max-width: 768px) {
     .movie-card {
         font-size: 0.9rem;
@@ -118,5 +166,24 @@
         width: 32px;
         height: 32px;
         font-size: 1.2rem;
+    }
+
+    .trailer-btn {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .modal-content iframe {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        font-size: 0.85rem;
+    }
+
+    .modal-content iframe {
+        height: 220px;
     }
 }
