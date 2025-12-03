@@ -1,4 +1,4 @@
-🎬 CineFlow – Movie Discovery & Favorites Web App
+🎬 CineHorizon – Movie Discovery & Favorites Web App
 
 CineFlow is a modern movie discovery web application built with React + Context API, allowing users to browse trending films, view details, and add favorites in a seamless and responsive interface.
 It fetches real-time movie data from The Movie Database (TMDB) and provides a clean UI with a smooth user experience.
@@ -78,3 +78,5 @@ Mohammed Mbarak Hassan
 🌐 Portfolio: mohammed-mbarak-portfolio.onrender.com
 💼 LinkedIn: linkedin.com/in/mohammed-mbarak
 🐙 GitHub: github.com/mohammed-mbarak
+
+The project live production link: https://cinehorizon.netlify.app/
