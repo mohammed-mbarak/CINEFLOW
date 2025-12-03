@@ -17,7 +17,7 @@ const Navbar = () => {
         <nav className='navbar'>
             <div className='navbar-container'>
                 <div className='navbar-brand'>
-                    <Link to='/' className='navbar-brand-link' onClick={closeMenu}>CineFlow</Link>
+                    <Link to='/' className='navbar-brand-link' onClick={closeMenu}>CineHorizon</Link>
                 </div>
                 
                 <div className='navbar-toggle' onClick={toggleMenu}>

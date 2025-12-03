@@ -11,7 +11,7 @@ const Footer = () => {
 
                 <div className='footer-section'>
                     <h3 className='footer-brand'>
-                        <span className="cine">Cine</span><span className="flow">Flow</span>
+                        <span className="cine">Cine</span><span className="flow">Horizon</span>
                     </h3>
                     <p className='footer-tagline'>Your ultimate movie exploration companion.</p>
                 </div>
